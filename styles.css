@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Snowstorm';
+  font-family: 'Calibri';
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
   line-height: 1.6;
   background-color: var(--background-color);
@@ -43,7 +43,7 @@ body {
 }
 
 p {
-  font-size: 1.03em;
+  font-size: 1.07em;
 }
 
 .container {
@@ -59,21 +59,21 @@ header {
 
 header h1 {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
-  color: #0088ff;
+  color: #FFFFFF;
 }
 
 header h1:hover {
-  color: #FFFFFF;
+  color: #3A8E3E;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 header h2 {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
-  color: #0088ff;
+  color: #FFFFFF;
 }
 
 header h2:hover {
-  color: #FFFFFF;
+  color: #3A8E3E;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -162,3 +162,245 @@ footer {
   border-radius: 50%; 
   object-fit: cover;
 }	
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Loading Screen Styling */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-out, visibility 0s linear 1s;
+    background: linear-gradient(135deg, #5f6e8b, #9f9f9f, #b0d0f2); /* Soft pastel gradient */
+    background-size: 400% 400%;
+    animation: gradientBackgroundAnimation 10s ease infinite;
+}
+
+/* Windows Notification Styling */
+#windows-notification {
+    width: 400px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title Bar */
+#title-bar {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Loading Content */
+#loading-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Loading Bar Container */
+#loading-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
+    position: relative;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* Loading Bar */
+#loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    animation: glowing 1.5s infinite;
+    transition: width 0.2s ease-in-out;
+}
+
+/* Gradient Animation for Background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Soft Gradient Background Animation */
+@keyframes gradientBackgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Glowing Effect Animation for Loading Bar */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    }
+    50% {
+        box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    }
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-out, visibility 0s linear 1s;
+    background: linear-gradient(135deg, #5f6e8b, #9f9f9f, #b0d0f2);
+    background-size: 400% 400%;
+    animation: gradientBackgroundAnimation 10s ease infinite;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientBackgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Space background that will be revealed after loading */
+#space-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: -2;
+    visibility: hidden; /* Initially hidden */
+}
+
+/* Animated Stars in Space */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+/* Keyframes for the twinkling effect */
+@keyframes twinkle {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.7);
+        opacity: 0.4;
+    }
+}
+
+/* This will move stars in space (background animation) */
+@keyframes moveStars {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-10%, -10%);
+    }
+}
+
+/* Space background visibility after loading */
+#space-background.visible {
+    visibility: visible;
+    animation: moveStars 60s linear infinite;
+}
+
+/* Main content after loading */
+#content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Show main content after loading */
+#content.show {
+    opacity: 1;
+}
+
+/* Space Animation */
+#space-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/black-marble.png'), 
+                radial-gradient(circle, #000, #111);
+    background-size: cover;
+    z-index: 1;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    animation: spaceMove 10s infinite linear;
+}
+
+/* Create a moving starfield effect */
+@keyframes spaceMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
